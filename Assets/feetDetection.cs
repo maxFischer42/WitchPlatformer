@@ -19,7 +19,7 @@ public class feetDetection : MonoBehaviour
     {
         if(layer == collision.gameObject.layer)
         {
-            player.isGrounded(true);
+            
         }
     }
 
@@ -27,7 +27,7 @@ public class feetDetection : MonoBehaviour
     {
         if (layer == collision.gameObject.layer)
         {
-            player.isGrounded(false);
+            
         }
     }
 
