@@ -8,6 +8,7 @@ public class PotionThrow : MonoBehaviour {
     public bool direction;
     SpriteRenderer PlayerRenderer;
     public GameObject Potion;
+    public Vector2 velocity;
 
     public void Start()
     {
@@ -25,17 +26,11 @@ public class PotionThrow : MonoBehaviour {
     public void ThrowPotion()
     {
         direction = PlayerRenderer.flipX;
-        float flip = transform.position.x / Mathf.Abs(transform.position.x);
-        Vector2 startPosition = transform.position;
-        startPosition = new Vector2(startPosition.x + (flip * increment.x), startPosition.y + (increment.y));
-        GameObject newPotion = (GameObject)Instantiate(Potion,transform);
-        PotionUpdate potionUp;
-        potionUp.startPosition = startPosition;
-        potionUp.direction = flip;
-        newPotion.GetComponent<PotionUpdate>() = potionUp;
-
+        float flip = FlipA();
+        Vector2 Spawn = new Vector2(transform.position.x + (increment.x + flip),transform.position.y + increment.y);
+        GameObject newPotion = (GameObject)Instantiate(Potion, transform);
+        newPotion.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x * flip, velocity.y);
         newPotion.transform.parent = null;
-        
     }
 
     float FlipA()

@@ -424,7 +424,7 @@ Prefab:
     - target: {fileID: 20000010728017760, guid: 6622b93cfd71148f88fa3b6097d487b6,
         type: 2}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.09367946
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20000010728017760, guid: 6622b93cfd71148f88fa3b6097d487b6,
         type: 2}
@@ -434,7 +434,7 @@ Prefab:
     - target: {fileID: 20000010728017760, guid: 6622b93cfd71148f88fa3b6097d487b6,
         type: 2}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8126411
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 20000010728017760, guid: 6622b93cfd71148f88fa3b6097d487b6,
         type: 2}
@@ -4470,7 +4470,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd878a4f4cc627f4ea102f17d805eae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  increment: {x: 0.5, y: 0.5}
+  direction: 0
   Potion: {fileID: 1052526936244286, guid: 4a030e1f5ba9a764887817fccdb3744d, type: 2}
+  velocity: {x: 1, y: 1.5}
 --- !u!1 &1713730088
 GameObject:
   m_ObjectHideFlags: 0
