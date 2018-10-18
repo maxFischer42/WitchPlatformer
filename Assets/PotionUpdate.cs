@@ -3,24 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PotionUpdate : MonoBehaviour {
+    public int numberOfCollision = 2;
+    public int[] collidableLayers;
+    public int enemyLayer;
 
-    public Vector2 startPosition;
-    public float direction;
-    public float timerIncrement;
-    float timer;
-    Vector2 currentPos;
-
-    private void Awake()
+    public void Update()
     {
-        timerIncrement *= direction;
+        if(numberOfCollision <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update ()
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        timer += timerIncrement;
-        float y = (-1 * Mathf.Pow(timer,2)) + (4 * timer) + -2;
-        Vector2 newPosition = new Vector2(startPosition.x + timer,startPosition.y + y);
-        transform.SetPositionAndRotation(newPosition,Quaternion.identity);
-	}
+        for(int i = 0; i < collidableLayers.Length; i++)
+        {
+            if(collidableLayers[i] == collision.gameObject.layer)
+            {
+                numberOfCollision--;
+                break;
+            }
+
+        }
+
+    }
+
+
 }

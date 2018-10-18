@@ -17,6 +17,7 @@ public class PotionThrow : MonoBehaviour {
 
     public void Update()
     {
+        direction = PlayerRenderer.flipX;
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             ThrowPotion();
@@ -24,11 +25,10 @@ public class PotionThrow : MonoBehaviour {
     }
 
     public void ThrowPotion()
-    {
-        direction = PlayerRenderer.flipX;
+    {        
         float flip = FlipA();
-        Vector2 Spawn = new Vector2(transform.position.x + (increment.x + flip),transform.position.y + increment.y);
-        GameObject newPotion = (GameObject)Instantiate(Potion, transform);
+        Vector2 Spawn = new Vector2(transform.position.x + (increment.x * flip),transform.position.y + increment.y);
+        GameObject newPotion = (GameObject)Instantiate(Potion, Spawn, Quaternion.identity);
         newPotion.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x * flip, velocity.y);
         newPotion.transform.parent = null;
     }
