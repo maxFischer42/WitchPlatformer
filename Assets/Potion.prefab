@@ -58,7 +58,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8be6341e1ce3f4cec9902bc34f72d20a, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3c3959ed2350e48a78b1dba8caa1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfCollision: 2
+  numberOfCollision: 7
   collidableLayers: 0800000009000000
   enemyLayer: 0
 --- !u!212 &212411525466880420
