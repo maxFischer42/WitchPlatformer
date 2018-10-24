@@ -7,11 +7,15 @@ public class WandHealth : MonoBehaviour {
     private Attack attack;
     private int health;
 
+    public GameObject notice;
+
     private Collider2D collide;
 
     private float multihit;
     private bool multihitting;
-	
+
+    [HideInInspector]public bool hasWand = true;
+
 	void Start ()
     {
         collide = GetComponent<PolygonCollider2D>();
@@ -27,23 +31,28 @@ public class WandHealth : MonoBehaviour {
 
     void Update ()
     {
-
         collide.enabled = attack.onCooldown;
-
-	    if(multihitting)
+        if (hasWand)
         {
-            multihit += Time.deltaTime;
-            if(multihit >= 0.2f)
+            if (multihitting)
             {
-                multihit = 0f;
-                health--;
-                multihitting = false;
+                multihit += Time.deltaTime;
+                if (multihit >= 0.2f)
+                {
+                    multihit = 0f;
+                    health--;
+                    multihitting = false;
+                }
             }
-        }
 
-        if(health <= 0)
-        {
-            attack.wand = null;
+            if (health <= 0)
+            {
+                attack.wand = null;
+                GameObject a = (GameObject)Instantiate(notice, transform);
+                a.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3f);
+                hasWand = false;
+                Destroy(a, 4.5f);
+            }
         }
 
 

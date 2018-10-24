@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f547d737287798e4a861c3134a6989ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VelocityToPush: {x: 0, y: 1000}
+  VelocityToPush: {x: 0, y: 550}
 --- !u!114 &114765181849792028
 MonoBehaviour:
   m_ObjectHideFlags: 1

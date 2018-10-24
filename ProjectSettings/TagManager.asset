@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Magic
   - Enemy
+  - Feet
   layers:
   - Default
   - TransparentFX

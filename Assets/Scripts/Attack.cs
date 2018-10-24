@@ -9,38 +9,43 @@ public class Attack : MonoBehaviour {
     [HideInInspector] public bool onCooldown;
     private Vector2 direction;
     private Animator anim;
+    private WandHealth health;
 
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         direction = new Vector2(1,0);
+        health = GetComponentInChildren<WandHealth>();
     }
 
     // Update is called once per frame
     void Update ()
     {
-	    if(onCooldown)
+        if (health.hasWand)
         {
-            cooldown += Time.deltaTime;
-            if(cooldown >= wand.attackRate)
+            if (onCooldown)
             {
-                cooldown = 0f;
-                onCooldown = false;
-                anim.SetBool("Wand",false);
+                cooldown += Time.deltaTime;
+                if (cooldown >= wand.attackRate)
+                {
+                    cooldown = 0f;
+                    onCooldown = false;
+                    anim.SetBool("Wand", false);
+                }
+                return;
             }
-            return;
-        }
-        else if(Input.GetButtonDown("Attack") && !onCooldown)
-        {
-            anim.SetBool("Wand", true);
-            Vector2 velocity = direction;
-            velocity = new Vector2(velocity.x * checkFlip() * wand.Speed, 0f);
-            GameObject spawn = (GameObject)Instantiate(wand.prefabToSpawn, transform);
-            spawn.GetComponent<Rigidbody2D>().velocity = velocity;
-            spawn.transform.parent = null;
-            Destroy(spawn, wand.timeTillDeSpawn);
-            onCooldown = true;
+            else if (Input.GetButtonDown("Attack") && !onCooldown)
+            {
+                anim.SetBool("Wand", true);
+                Vector2 velocity = direction;
+                velocity = new Vector2(velocity.x * checkFlip() * wand.Speed, 0f);
+                GameObject spawn = (GameObject)Instantiate(wand.prefabToSpawn, transform);
+                spawn.GetComponent<Rigidbody2D>().velocity = velocity;
+                spawn.transform.parent = null;
+                Destroy(spawn, wand.timeTillDeSpawn);
+                onCooldown = true;
+            }
         }
 	}
 

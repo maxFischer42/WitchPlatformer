@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drops:
   - {fileID: 11400000, guid: e5a126ec63761014f93665a5b71f9c9e, type: 2}
-  element: {fileID: 0}
+  element: {fileID: 11400000, guid: a725651bb664ccc469758b782b19593e, type: 2}
   weakness: {fileID: 0}
   direction: {x: -3, y: 0}
   timer: 2

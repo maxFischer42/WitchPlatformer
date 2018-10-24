@@ -9,48 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1052526936244286}
+  m_RootGameObject: {fileID: 1719596464324558}
   m_IsPrefabAsset: 1
---- !u!1 &1052526936244286
+--- !u!1 &1719596464324558
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4924457177418454}
-  - component: {fileID: 212411525466880420}
-  - component: {fileID: 58432593993888558}
-  - component: {fileID: 50798484324423612}
-  - component: {fileID: 114288417826376684}
-  - component: {fileID: 114030755589948500}
-  m_Layer: 10
-  m_Name: Potion
+  - component: {fileID: 4054251114950474}
+  - component: {fileID: 212227260293690986}
+  - component: {fileID: 95763047919811164}
+  - component: {fileID: 61648048176997632}
+  - component: {fileID: 114157248851824874}
+  - component: {fileID: 50512584939196872}
+  m_Layer: 0
+  m_Name: slimeGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4924457177418454
+--- !u!4 &4054251114950474
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1052526936244286}
+  m_GameObject: {fileID: 1719596464324558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50798484324423612
+--- !u!50 &50512584939196872
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1052526936244286}
+  m_GameObject: {fileID: 1719596464324558}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -59,63 +59,72 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 8be6341e1ce3f4cec9902bc34f72d20a, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &58432593993888558
-CircleCollider2D:
+  m_Constraints: 4
+--- !u!61 &61648048176997632
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1052526936244286}
+  m_GameObject: {fileID: 1719596464324558}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0043046474}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 1.6}
+    newSize: {x: 1.6, y: 1.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.3
---- !u!114 &114030755589948500
+  m_Size: {x: 1.203968, y: 1.195358}
+  m_EdgeRadius: 0
+--- !u!95 &95763047919811164
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1719596464324558}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 979bb861fdeefd2459c3ef9cd8beae02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114157248851824874
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1052526936244286}
+  m_GameObject: {fileID: 1719596464324558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a9a990333613ce4f8c795353a13e76a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a02bf05f7c758a409e583087314afa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element:
-  - {fileID: 11400000, guid: 57d6f7091b0372e4c89deb66ee62a325, type: 2}
-  - {fileID: 11400000, guid: a725651bb664ccc469758b782b19593e, type: 2}
-  platform:
-  - {fileID: 1028752946688120, guid: b448f581060da2e41acc7e5c52a0c3b9, type: 2}
-  - {fileID: 1719596464324558, guid: 0dbf6701d304d2744b508246bbf21280, type: 2}
---- !u!114 &114288417826376684
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1052526936244286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c3c3959ed2350e48a78b1dba8caa1a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfCollision: 7
-  collidableLayers: 0800000009000000
-  enemyLayer: 0
---- !u!212 &212411525466880420
+  VelocityToPush: {x: 0, y: 1000}
+--- !u!212 &212227260293690986
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1052526936244286}
+  m_GameObject: {fileID: 1719596464324558}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -125,7 +134,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dd4cfedb46b694842addc3a70644a5fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -144,8 +153,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: a6bce6382504c974aa9f5861098a624a, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 1628abce8c47de048b7ec14b519ce959, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -455,6 +455,11 @@ Prefab:
       propertyPath: m_CullingMask.m_Bits
       value: 3895
       objectReference: {fileID: 0}
+    - target: {fileID: 20000010728017760, guid: 6622b93cfd71148f88fa3b6097d487b6,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50000011144120262, guid: 6622b93cfd71148f88fa3b6097d487b6, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 6622b93cfd71148f88fa3b6097d487b6, type: 2}
@@ -1220,6 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1677158f925369f4cac182e0f9b4cf00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notice: {fileID: 1466683365113234, guid: bd46d31ed94c9194a9f9c1fdc4c6b43d, type: 2}
 --- !u!60 &487435989
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14018,7 +14024,7 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: dd4cfedb46b694842addc3a70644a5fa, type: 2}
+  - {fileID: 2100000, guid: 8dfdcb1d54d0ea84f8efc51917751886, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20572,7 +20578,7 @@ GameObject:
   - component: {fileID: 1765332939}
   m_Layer: 0
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: Feet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
