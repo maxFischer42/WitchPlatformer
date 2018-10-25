@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformController : MonoBehaviour {
+public class PlatformController : limitVelocity {
 
 
 
-    private Rigidbody2D rigidBody;
     public SpriteRenderer spriteRenderer;
     public float groundSpeed;
     public float jumpAcceleration;
@@ -18,14 +17,13 @@ public class PlatformController : MonoBehaviour {
     public Sprite jumpSprite;
     public Sprite fallSprite;
 
-
+    
 
 
 
 
 	// Use this for initialization
 	void Start () {
-        rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 	}
@@ -45,7 +43,7 @@ public class PlatformController : MonoBehaviour {
             Move();
         }
         spriteRenderer.flipX = flipX();
-        rigidBody.velocity = velocity;
+        rigidbody.velocity = velocity;
     }
 
     bool Jumping()
@@ -64,7 +62,7 @@ public class PlatformController : MonoBehaviour {
             animator.SetBool("Grounded", false);
             animator.enabled = false;
             spriteRenderer.sprite = jumpSprite;
-            velocity = new Vector2(rigidBody.velocity.x, jumpAcceleration * rigidBody.mass);
+            velocity = new Vector2(rigidbody.velocity.x, jumpAcceleration * rigidbody.mass);
             return true;
         }
         animator.enabled = true;
@@ -74,7 +72,7 @@ public class PlatformController : MonoBehaviour {
 
     void Falling()
     {
-        if(rigidBody.velocity.y <= 0)
+        if(rigidbody.velocity.y <= 0)
         {
             animator.SetBool("Jumped", false);
             animator.SetBool("falling", true);

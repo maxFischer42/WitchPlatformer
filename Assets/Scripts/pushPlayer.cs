@@ -10,7 +10,7 @@ public class pushPlayer : MonoBehaviour {
     {
         if(collision.GetComponent<Rigidbody2D>())
         {
-            collision.GetComponent<Rigidbody2D>().AddForce(VelocityToPush);
+            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.GetComponent<Rigidbody2D>().velocity.x,VelocityToPush.y);
             if(collision.name == "Player")
             {
                 collision.GetComponent<PlatformController>().Grounded = false;
