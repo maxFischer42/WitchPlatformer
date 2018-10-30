@@ -10,6 +10,7 @@ public class Ladder : MonoBehaviour {
     private Rigidbody2D playerRigidbody;
     private PlatformController _platform;
     private bool isColliding;
+    private float gScale;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +40,8 @@ public class Ladder : MonoBehaviour {
         if(collision.gameObject.layer == layer)
         {
             isColliding = true;
+            gScale = collision.GetComponent<Rigidbody2D>().gravityScale;
+            collision.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
     }
 
@@ -46,6 +49,7 @@ public class Ladder : MonoBehaviour {
     {
         if (collision.gameObject.layer == layer)
         {
+            collision.GetComponent<Rigidbody2D>().gravityScale = gScale;
             isColliding = false;
         }
     }
