@@ -11,4 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d1ed553c80f324a9a8a34c3da28041, type: 3}
   m_Name: Things to do
   m_EditorClassIdentifier: 
-  To_Do_List: []
+  To_Do_List:
+  - Ladder Mechanic
+  - Red Potion (Side Turning)
+  - Slimes bouncy effect
+  - '[Player] Damage bounce'
+  - Skeleton gfx
+  - Skeleton AI
