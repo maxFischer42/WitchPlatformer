@@ -12,9 +12,9 @@ public class Enemy : MonoBehaviour {
     private Vector2 startPosition;
     public float timer;
     private float timerIncrement;
-    private float flipped = 1;
-    private Rigidbody2D m_rigidBody;
-    private SpriteRenderer sprite;
+    [HideInInspector]public float flipped = 1;
+    public Rigidbody2D m_rigidBody;
+    [HideInInspector] public SpriteRenderer sprite;
     public float speed;
     public GameObject deathEffect;
 
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
 
     public bool command;
 
-    private Inventory playerInventory;
+    [HideInInspector] public Inventory playerInventory;
 
     
 
@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour {
 
     public void GiveItems()
     {
-        int random = Random.Range(0, drops.Length);
+        int random = Random.Range(0, drops.Length-1);
         playerInventory.AddItem(drops[random]);
     }
 
