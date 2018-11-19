@@ -5,7 +5,7 @@ using UnityEngine;
 public class WandHealth : MonoBehaviour {
 
     private Attack attack;
-    private int health;
+    [HideInInspector] public int health;
 
     public GameObject notice;
 

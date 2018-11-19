@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88eca9bae6e7ba94a827d91aa3cb93fe, type: 3}
-  m_Name: Basic Wand
+  m_Name: Gale Wand
   m_EditorClassIdentifier: 
   magicEffect: {fileID: 11400000, guid: 57d6f7091b0372e4c89deb66ee62a325, type: 2}
-  wandHealth: 99999
+  wandHealth: 25
   attackRate: 0.5
   prefabToSpawn: {fileID: 1963167040891994, guid: 931c5dc69a7cbd3458d1f90c91c2950b,
     type: 2}
-  timeTillDeSpawn: 1
-  Speed: 6
+  timeTillDeSpawn: 0.6
+  Speed: 8

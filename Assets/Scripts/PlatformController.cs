@@ -44,7 +44,37 @@ public class PlatformController : limitVelocity {
         }
         spriteRenderer.flipX = flipX();
         rigidbody.velocity = velocity;
+        LimitVel();
     }
+
+    void LimitVel()
+    {
+        Vector2 newVel = Vector2.zero;
+        if (rigidbody.velocity.y > velocityLimit.y)
+        {
+            newVel = new Vector2(rigidbody.velocity.x, velocityLimit.y);
+            rigidbody.velocity = newVel;
+        }
+        else if (rigidbody.velocity.y < (velocityLimit.y * -1))
+        {
+            newVel = new Vector2(rigidbody.velocity.x, velocityLimit.y * -1f);
+            rigidbody.velocity = newVel;
+        }
+
+        if (rigidbody.velocity.x > velocityLimit.x)
+        {
+            newVel = new Vector2(velocityLimit.x, rigidbody.velocity.y);
+            rigidbody.velocity = newVel;
+        }
+        else if (rigidbody.velocity.x < (velocityLimit.x * -1))
+        {
+            newVel = new Vector2(velocityLimit.x * -1f, rigidbody.velocity.y);
+            rigidbody.velocity = newVel;
+        }
+    }
+
+
+
 
     bool Jumping()
     {
@@ -57,6 +87,7 @@ public class PlatformController : limitVelocity {
         }
         if(Input.GetButtonDown("Jump"))
         {
+            Debug.Log("Jumped");
             Jumped = true;
             animator.SetBool("Jumped", true);
             animator.SetBool("Grounded", false);
@@ -90,7 +121,7 @@ public class PlatformController : limitVelocity {
 
     void Move()
     {
-        
+        Debug.Log("Move horizontal");
         float x = horizontalInput() * groundSpeed;
         if (x != 0)
         {

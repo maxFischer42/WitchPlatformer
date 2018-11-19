@@ -5,7 +5,7 @@ using UnityEngine;
 public class limitVelocity : MonoBehaviour {
 
     public Rigidbody2D rigidbody;
-    public float velocityLimit;
+    public Vector2 velocityLimit;
 
     private void Start()
     {
@@ -17,17 +17,27 @@ public class limitVelocity : MonoBehaviour {
     void LateUpdate () {
         Vector2 newVel;
 
-        if (rigidbody.velocity.y > velocityLimit)
+        if (rigidbody.velocity.y > velocityLimit.y)
         {
-            newVel = new Vector2(rigidbody.velocity.x, velocityLimit);
+            newVel = new Vector2(rigidbody.velocity.x, velocityLimit.y);
             rigidbody.velocity = newVel;
         }
-        else if(rigidbody.velocity.y < (velocityLimit * -1))
+        else if(rigidbody.velocity.y < (velocityLimit.y * -1))
         {
-            newVel = new Vector2(rigidbody.velocity.x, velocityLimit * -1f);
+            newVel = new Vector2(rigidbody.velocity.x, velocityLimit.y * -1f);
             rigidbody.velocity = newVel;
         }
 
-	}
+        if (rigidbody.velocity.x > velocityLimit.x)
+        {
+            newVel = new Vector2(velocityLimit.x, rigidbody.velocity.y);
+            rigidbody.velocity = newVel;
+        }
+        else if (rigidbody.velocity.x < (velocityLimit.x * -1))
+        {
+            newVel = new Vector2(velocityLimit.x * -1f, rigidbody.velocity.y);
+            rigidbody.velocity = newVel;
+        }
+    }
 
 }

@@ -9,19 +9,26 @@ public class Brewing : MonoBehaviour {
     private bool isOpen = false;
     private Canvas brewCanvas;
 
+    private WandHealth m_wandHealth;
+    private Attack m_attack;
+
     public Recipe GreenRecipe;
     public Recipe RedRecipe;
     public Recipe PurpleRecipe;
 
-	// Use this for initialization
-	void Start () {
+    public Items[] ingredients;
+
+    // Use this for initialization
+    void Start() {
+        m_wandHealth = GameObject.Find("Player").GetComponentInChildren<WandHealth>();
+        m_attack = m_wandHealth.GetComponentInParent<Attack>();
         brewCanvas = GetComponent<Canvas>();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-		if(Input.GetButtonDown("Brewing"))
+        if (Input.GetButtonDown("Brewing"))
         {
             brewCanvas.enabled = true;
         }
@@ -35,7 +42,7 @@ public class Brewing : MonoBehaviour {
     {
         Items[] currentInventory = m_inventory.items;
         Items[] recipe = GreenRecipe.ingredients;
-        checkGreen(currentInventory,recipe);
+        checkGreen(currentInventory, recipe);
     }
 
 
@@ -60,7 +67,57 @@ public class Brewing : MonoBehaviour {
         }
     }
 
+    bool CheckIfOwned(Items require)
+    {
+        for(int i = 0; i < m_inventory.items.Length; i++)
+        {
+            if (m_inventory.items[i] == require)
+                return true;
+        }
+        return false;
+    }
 
 
+
+    public void DelItemsSlime()
+    {
+        if (CheckIfOwned(ingredients[0]))
+            m_wandHealth.health++;
+        Debug.Log("Clear Inventory");
+        m_inventory.RemoveItem(ingredients[0]);
+        
+    }
+
+    public void DelItemsBone()
+    {
+        if (CheckIfOwned(ingredients[1]))
+            m_attack.wand.attackRate -= 0.05f;
+        Debug.Log("Clear Inventory");
+        m_inventory.RemoveItem(ingredients[1]);
+    }
+
+    public void DelItemsFlesh()
+    {
+        if (CheckIfOwned(ingredients[2]))
+            m_attack.wand.Speed += 0.1f;
+        Debug.Log("Clear Inventory");
+        m_inventory.RemoveItem(ingredients[2]);
+    }
+
+    public void DelItemsFlower()
+    {
+        if (CheckIfOwned(ingredients[3]))
+            m_wandHealth.health+= 5;
+        Debug.Log("Clear Inventory");
+        m_inventory.RemoveItem(ingredients[3]);
+    }
+
+    public void DelItemsScale()
+    {
+        if (CheckIfOwned(ingredients[4]))
+            m_wandHealth.health += 10;
+        Debug.Log("Clear Inventory");
+        m_inventory.RemoveItem(ingredients[4]);
+    }
 
 }
