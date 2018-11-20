@@ -7,6 +7,7 @@ TagManager:
   - Magic
   - Enemy
   - Feet
+  - Hurt
   layers:
   - Default
   - TransparentFX
