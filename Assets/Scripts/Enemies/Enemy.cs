@@ -68,8 +68,11 @@ public class Enemy : MonoBehaviour {
 
     public void GiveItems()
     {
-        int random = Random.Range(0, drops.Length-1);
-        playerInventory.AddItem(drops[random]);
+        if (!(drops.Length < 1))
+        {
+            int random = Random.Range(0, drops.Length - 1);
+            playerInventory.AddItem(drops[random]);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

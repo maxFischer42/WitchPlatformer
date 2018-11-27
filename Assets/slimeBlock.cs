@@ -19,8 +19,15 @@ public class slimeBlock : MonoBehaviour {
         if(collision.gameObject.tag == "Feet")
         {
             anim.enabled = true;
-            collision.transform.parent.GetComponent<Rigidbody2D>().AddForce(VelocityToPush);
-            shake = true;
+            if (Input.GetButtonDown("Jump"))
+            {
+                collision.transform.parent.GetComponent<Rigidbody2D>().AddForce(VelocityToPush * 3);
+            }
+            else
+            {
+                collision.transform.parent.GetComponent<Rigidbody2D>().AddForce(VelocityToPush * collision.transform.parent.GetComponent<Rigidbody2D>().velocity);
+            }
+                shake = true;
             timer = 0;
             if (collision.transform.parent.name == "Player")
             {

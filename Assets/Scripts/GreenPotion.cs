@@ -18,6 +18,10 @@ public class GreenPotion : MonoBehaviour {
             {
                 i = 1;
             }
+            if(EnemyElement == element[2])
+                {
+                i = 2;
+            }
 
             GameObject plat = (GameObject)Instantiate(platform[i], transform.position, Quaternion.identity);
             plat.transform.parent = null;
