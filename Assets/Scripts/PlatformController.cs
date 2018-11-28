@@ -17,11 +17,6 @@ public class PlatformController : limitVelocity {
     public Sprite jumpSprite;
     public Sprite fallSprite;
 
-    
-
-
-
-
 	// Use this for initialization
 	void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -33,7 +28,8 @@ public class PlatformController : limitVelocity {
 	void Update ()
     {
         
-        if(!Grounded)
+        LimitVel();
+        if (!Grounded)
         {
             Falling();
             return;
@@ -44,7 +40,6 @@ public class PlatformController : limitVelocity {
         }
         spriteRenderer.flipX = flipX();
         rigidbody.velocity = velocity;
-        LimitVel();
     }
 
     void LimitVel()
@@ -105,9 +100,12 @@ public class PlatformController : limitVelocity {
     {
         if(rigidbody.velocity.y <= 0)
         {
+            Move();
+            rigidbody.AddForce(velocity * 5);
             animator.SetBool("Jumped", false);
             animator.SetBool("falling", true);
             Jumped = false;
+            Move();
             spriteRenderer.sprite = fallSprite;
         }
     }

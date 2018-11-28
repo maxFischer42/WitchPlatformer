@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db07afcc458cd944b21dc7c3c3ceaaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drops: []
+  drops:
+  - {fileID: 11400000, guid: a363ae7114adbff40a283f4cbd8838c7, type: 2}
   element: {fileID: 11400000, guid: 43fba23b709b95a4780c4c0a5ba4f1e5, type: 2}
   weakness: {fileID: 0}
   direction: {x: -2, y: 0}

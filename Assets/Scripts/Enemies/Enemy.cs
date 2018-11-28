@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
 
     public bool command;
 
-    [HideInInspector] public Inventory playerInventory;
+    /*[HideInInspector]*/ public Inventory playerInventory;
 
     
 
@@ -68,11 +68,7 @@ public class Enemy : MonoBehaviour {
 
     public void GiveItems()
     {
-        if (!(drops.Length < 1))
-        {
-            int random = Random.Range(0, drops.Length - 1);
-            playerInventory.AddItem(drops[random]);
-        }
+        playerInventory.AddItem(drops[0]);        
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

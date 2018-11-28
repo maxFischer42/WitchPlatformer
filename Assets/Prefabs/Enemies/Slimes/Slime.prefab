@@ -187,7 +187,7 @@ MonoBehaviour:
   speed: 1
   deathEffect: {fileID: 1562656719085980, guid: f0973932cf5fcff47bf7803bfad84d98,
     type: 2}
-  health: 5
+  health: 1
   command: 0
   playerInventory: {fileID: 0}
 --- !u!212 &212935571347809584

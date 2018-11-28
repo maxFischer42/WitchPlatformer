@@ -17,15 +17,16 @@ public class GreenPotion : MonoBehaviour {
             if(EnemyElement == element[1])
             {
                 i = 1;
+                collision.gameObject.GetComponent<Enemy>().DestroyObject();
             }
             if(EnemyElement == element[2])
-                {
+            {
                 i = 2;
+                collision.gameObject.GetComponent<BirdFly>().DestroyObject(true);
             }
-
             GameObject plat = (GameObject)Instantiate(platform[i], transform.position, Quaternion.identity);
             plat.transform.parent = null;
-            collision.gameObject.GetComponent<Enemy>().DestroyObject();
+            
             Destroy(gameObject);
         }
     }

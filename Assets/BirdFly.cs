@@ -14,15 +14,17 @@ public class BirdFly : Enemy {
 	void Start () {
         Spawn = transform.position;
         thisObject = gameObject;
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        playerInventory = GameObject.FindObjectOfType<Inventory>().GetComponent<Inventory>();
         timer2 += Time.deltaTime;
         if(timer2 >= timeUnitlVanish)
         {
-            Instantiate(thisObject, Spawn, Quaternion.identity);
-            Destroy(gameObject);
+            timer2 = 0;
+            DestroyObject(true);
         }
         m_rigidBody.velocity = direction;
         if (direction.x > 0)
@@ -34,4 +36,11 @@ public class BirdFly : Enemy {
             GetComponent<SpriteRenderer>().flipX = false;
         }
 	}
+
+    public void DestroyObject(bool bird)
+    {
+        Instantiate(thisObject, Spawn, Quaternion.identity);
+        Destroy(gameObject, 0.1f);
+    }
+
 }
